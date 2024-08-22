@@ -250,3 +250,24 @@
 
     }
 }
+
+
+@media only screen and (max-width: 460px) {
+    .sections {
+        max-width: 576px;
+
+        .section-left {
+            display: none;
+         }
+
+         .section-right {
+            width: 576px;
+
+
+          .cards {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
