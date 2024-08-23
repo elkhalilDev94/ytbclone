@@ -380,11 +380,19 @@
         }
     }
 }
-/*     .nav_left {
-        h2 {
-            font-size: 12px;
-            margin-right: 5px;
-        }
-    } */
-    
+
 }
+@media only screen and (max-width: 475px) {
+    .sections {
+       max-width: 470px;
+       .section-right {
+           width: 470px;
+           .cards {
+                display: flex;
+                flex-direction: column ;
+           }
+       }
+   } 
+
+}
+
