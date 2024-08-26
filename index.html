@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>deTube49</title>
+    <!-- <link rel="stylesheet" href="./css/styleChatgpt.css"> -->
+
+    <title>Document</title>
 </head>
 
 <body>
@@ -26,16 +28,24 @@
                     <form action="" class="search_form">
                         <input type="search" name="" id="" placeholder="search" class="input_form">
                         <button class="btn search"> <i class="uil uil-search"></i></button>
-
-                    </form>
-                    <button class="btn mic"><i class="uil uil-microphone"></i></button>
+                        <button class="btn mic"><i class="uil uil-microphone"></i></button>
+                    </form>                  
                 </div>
-                <div class="nav_section nav_right">
-                    <div class="nv">
+          <!--       <div>
+                    <button class="btn mic"><i class="uil uil-microphone"></i></button>
+                </div> -->
+                
+                <!-- <button class="btn mic_" style="display: none;"><i class="uil uil-microphone"></i></button> -->
 
-                        <button class="btn notif"><i class="uil uil-bell"></i></button>
+            
+                <div class="nav_section nav_right">
+                    <!-- <div class="nv"> -->
+                        <!-- <button class="btn search_"> <i class="uil uil-search"></i></button> -->
+                        <!-- <button class="btn notif"><i class="uil uil-bell"></i></button> -->
+                        <!-- <button class="btn night"><i class="uil uil-moon"></i></button> -->
                         <button class="btn night"><i class="uil uil-moon"></i></button>
-                    </div>
+
+                    <!-- </div> -->
                     <img src="./images/user.jpg" alt="" class="profil">
                 </div>
             </nav>
@@ -44,21 +54,30 @@
 
     <div class="sections">
         <section class="section-left">
-            <div class="menu_left ">
+       <!--      <div class="sidebar">
+                <button class="btn menu_hide">
+                    <i class="uil uil-bars"></i>
+                </button>
+                <a href="" class="nav_logo">
+                    <img src="./images/user.jpg" alt="" class="logo">               
+                </a>
+                <h2>deTube49</h2>
+            </div> -->
+        <!--     <div class="menu_left ">
                 <ul>
-                    <li><a href=""><i class="uil uil-home"></i>Home</a></li>
-                    <li><a href=""><i class="uil uil-home"></i>Home</a></li>
-                    <li><a href=""><i class="uil uil-home"></i>Home</a></li>
+                    <li><i class="uil uil-home"></i><a href=""></a>Home</a></li>
+                    <li><i class="uil uil-home"></i><a href=""></a>Home</a></li>
+                    <li><i class="uil uil-home"></i><a href=""></a>Home</a></li>
                 </ul>
-            </div>
-            <div class="menu_left ">
+            </div> -->
+       <!--      <div class="menu_left ">
                 <h4>YOU</h4>
                 <ul>
                     <li><a href=""><i class="uil uil-home"></i>Home</a></li>
                     <li><a href=""><i class="uil uil-home"></i>Home</a></li>
                     <li><a href=""><i class="uil uil-home"></i>Home</a></li>
                 </ul>
-            </div>
+            </div> -->
             <div class="menu_left ">
                 <h4>YOU</h4>
                 <ul>
@@ -83,8 +102,10 @@
                 </ul>
             </div>
         </section>
-        <section class="section-right">
+        <section class="section-right" id="section-right">
+           <button class="scroll-button scroll-left" onclick="scrollMenu(-200)">&#9664;</button>
             <div class="keywords">
+                
                 <div class="keyword">testKey</div>
                 <div class="keyword">testKey</div>
                 <div class="keyword">testKey</div>
@@ -103,8 +124,9 @@
                 <div class="keyword">testKey</div>
                 <div class="keyword">testKey</div>
                 <div class="keyword">testKey</div>
-            </div>
-
+            
+            </div> 
+            <button class="scroll-button scroll-right" onclick="scrollMenu(200)">&#9654;</button>
             <div class="cards">
                 <div class="card">
                     <div class="back_video">
@@ -305,10 +327,293 @@
                     </div>
                 </div>
 
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div class="title">
+                                <p class="__title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div>
+                                <p class="title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div>
+                                <p class="title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div>
+                                <p class="title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div>
+                                <p class="title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div>
+                                <p class="title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div>
+                                <p class="title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div>
+                                <p class="title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div>
+                                <p class="title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="back_video">
+                        <img src="./images/morocco-now.jpg" alt="">
+                    </div>
+                    <div class="user_title_video">
+                        <div>
+                            <img src="./images/user.jpg" alt="">
+                        </div>
+                        <div class="info_videos">
+
+                            <div>
+                                <p class="title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit.</a></p>
+                            </div>
+
+                            <div class="chanelName">
+                                <h4>deTube49 <i class="uil uil-check-circle"></i></h4>
+                            </div>
+
+                            <div class="views">
+                                <p>25 k vues . il y a 3 semaines</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
+            <button id="scrollTop">Top</button>
         </section>
     </div>
+           
     <script src="./js/script.js"></script>
+    <!-- <script src="./js/scriptChatGpt.js"></script> -->
 </body>
 
 </html>
