@@ -3,8 +3,12 @@ let menu = document.querySelector(".menu");
 let menu_hide = document.querySelector(".menu_hide");
 
 let section_left = document.querySelector(".section-left");
+
 let sections = document.querySelector(".sections");
+
 let sidebar = document.querySelector('.sidebar');
+
+let scrollToTop = document.querySelector('.scrollToTop');
 
 // let section_right = document.querySelector('.section-right');
 
@@ -34,24 +38,24 @@ let section_right = document.querySelector(".section-right");
 menu.addEventListener('click', () => {
 
   // if (document.body.clientWidth <= 600) {
-    // Code to execute if the body width is greater than 600px
-   
-/*     section_left.classList.toggle('active');
-    sidebar.classList.toggle('active');
- */
-    // section_right.style.display.zIndex = "-1";
+  // Code to execute if the body width is greater than 600px
 
-    // if (document.body.clientWidth >= 1000) {
-/* 
-        section_right.classList.toggle('extend');
-        section_right.classList.remove('extend'); */
+  /*     section_left.classList.toggle('active');
+      sidebar.classList.toggle('active');
+   */
+  // section_right.style.display.zIndex = "-1";
 
-        section_right.classList.toggle('extend');
-        section_left.classList.toggle('extend');
+  // if (document.body.clientWidth >= 1000) {
+  /* 
+          section_right.classList.toggle('extend');
+          section_right.classList.remove('extend'); */
 
-      /*   section_right.style.flexBasis = "80%";
-        section_left.style.flexBasis = "20%"; */
-    // }
+  section_right.classList.toggle('extend');
+  section_left.classList.toggle('extend');
+
+  /*   section_right.style.flexBasis = "80%";
+    section_left.style.flexBasis = "20%"; */
+  // }
   // } 
 
   console.log('i am fine');
@@ -87,34 +91,57 @@ scrollRightButton.addEventListener('click', () => {
 
 function scrollMenu(distance) {
   keywords.scrollBy({
-        left: distance,
-        behavior: 'smooth'
-    });
+    left: distance,
+    behavior: 'smooth'
+  });
 
-    // Check if buttons should be shown or hidden after scrolling
-    setTimeout(checkButtonVisibility, 300); // Delay to wait for the scroll to finish
+  // Check if buttons should be shown or hidden after scrolling
+  setTimeout(checkButtonVisibility, 300); // Delay to wait for the scroll to finish
 }
 
 function checkButtonVisibility() {
-    // Show the left button if we have scrolled away from the start
-    if (keywords.scrollLeft > 0) {
-        scrollLeftButton.style.display = "block";
-    } else {
-        scrollLeftButton.style.display = "none";
-    }
+  // Show the left button if we have scrolled away from the start
+  if (keywords.scrollLeft > 0) {
+    scrollLeftButton.style.display = "block";
+  } else {
+    scrollLeftButton.style.display = "none";
+  }
 
-    // Show the right button if we are not fully scrolled to the end
-    if (keywords.scrollWidth - keywords.clientWidth > keywords.scrollLeft) {
-        scrollRightButton.style.display = "block";
-    } else {
-       scrollRightButton.style.display = "none";
-    }
+  // Show the right button if we are not fully scrolled to the end
+  if (keywords.scrollWidth - keywords.clientWidth > keywords.scrollLeft) {
+    scrollRightButton.style.display = "block";
+  } else {
+    scrollRightButton.style.display = "none";
+  }
 }
 
 // Initial check on page load
 checkButtonVisibility();
 
 
-document.getElementById('scrollTop').addEventListener('click', function() {
-  document.getElementById('section-right').scrollBy(0, -1000);
+
+section_right.addEventListener("scroll", (e) => {
+  if (section_right.scrollTop > 300) {
+    // scrollToTop.classList.add('show');
+    scrollToTop.style.opacity = "1";
+    console.log('dddddddd');
+  } else {
+
+    scrollToTop.style.opacity = "0";
+    // scrollToTop.classList.remove('show');
+  }
+
+    // console.log(e.target.scrollY);
 });
+
+
+
+scrollToTop.addEventListener('click', function () {
+  // section_right.scrollBy(0, -600);
+  section_right.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+});
+});
+
+
