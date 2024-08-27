@@ -137,8 +137,9 @@ html {
     }
 
     .btn:hover {
-        background-color: #c46f6f;
+        background-color: var(--bg-color);
         border-radius: 50%;
+        color: var(--text-color);
     }
 
     i {
