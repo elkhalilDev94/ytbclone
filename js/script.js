@@ -10,6 +10,8 @@ let sidebar = document.querySelector('.sidebar');
 
 let scrollToTop = document.querySelector('.scrollToTop');
 
+
+
 // let section_right = document.querySelector('.section-right');
 
 let section_right = document.querySelector(".section-right");
@@ -27,8 +29,8 @@ btnDark.addEventListener("click", function () {
 
 
 
-  section_left.classList.toggle('darkMode');
-  section_right.classList.toggle('darkMode');
+  // section_left.classList.toggle('darkMode');
+  // section_right.classList.toggle('darkMode');
 });
 
 /* menu_hide.addEventListener('click', () => {
@@ -100,6 +102,8 @@ const keywords = document.querySelector(".keywords");
 const scrollLeftButton = document.querySelector(".scroll-left");
 const scrollRightButton = document.querySelector(".scroll-right");
 
+let bodyWidth = document.body.clientWidth;
+
 /* 
 scrollRightButton.addEventListener('click', () => {
     console.log('test_me');
@@ -123,15 +127,16 @@ function checkButtonVisibility() {
   console.log("Scroll Left:", keywords.scrollLeft); */
 
 
+
   // Show the left button if we have scrolled away from the start
-  if (keywords.scrollLeft > 0) {
+  if (keywords.scrollLeft > 0 ) {
     scrollLeftButton.style.display = "block";
   } else {
     scrollLeftButton.style.display = "none";
   }
 
   // Show the right button if we are not fully scrolled to the end
-  if (keywords.scrollWidth - keywords.clientWidth > keywords.scrollLeft) {
+  if ((keywords.scrollWidth - keywords.clientWidth > keywords.scrollLeft) && bodyWidth > 500 ) {
     scrollRightButton.style.display = "block";
   } else {
     scrollRightButton.style.display = "none";
@@ -168,3 +173,46 @@ scrollToTop.addEventListener('click', function () {
 });
 
 
+/*--------------------------------------*/
+
+// const scrollContainer = document.querySelector('.scroll-container');
+
+keywords.addEventListener('wheel', (event) => {
+  event.preventDefault();
+  keywords.scrollLeft += event.deltaY;
+});
+
+let startX;
+let scrollLeft;
+
+keywords.addEventListener('mousedown', (e) => {
+  startX = e.pageX - keywords.offsetLeft;
+  scrollLeft = keywords.scrollLeft;
+  keywords.style.cursor = 'grabbing';
+  keywords.style.userSelect = 'none';
+
+  console.log(startX);
+  console.log(scrollLeft);
+
+  
+});
+
+keywords.addEventListener('mouseleave', () => {
+  keywords.style.cursor = 'default';
+  keywords.style.userSelect = 'auto';
+});
+
+keywords.addEventListener('mouseup', () => {
+  keywords.style.cursor = 'default';
+  keywords.style.userSelect = 'auto';
+});
+
+keywords.addEventListener('mousemove', (e) => {
+  if (!startX) return;
+  const x = e.pageX - keywords.offsetLeft;
+  const walk = (x - startX) * 2; // *2 for faster scroll
+  keywords.scrollLeft = scrollLeft - walk;
+});
+
+
+/*---------------------------------------*/
