@@ -4,8 +4,8 @@
     --bg-color: #ffffff;
     --text-color: #000000;
     --link-color: #1a73e8;
-    --keys_back : #333;
-  }
+    --keys_back: #333;
+}
 
 
 
@@ -40,7 +40,19 @@ html {
     }
 
     & .nav_left {
-        justify-content: space-between;
+        flex-basis: 35%;
+    }
+
+    & .nav_center {
+        flex-basis: 45%;
+    }
+
+    & .nav_right {
+        flex-basis: 20%;
+    }
+
+    & .nav_left {
+        justify-content: flex-start;
         gap: 0.6rem;
         display: flex;
         align-content: center;
@@ -91,6 +103,7 @@ html {
                 background-color: var(--text-color);
                 color: var(--bg-color);
             }
+
             .input_form::placeholder {
                 color: var(--bg-color);
             }
@@ -120,7 +133,7 @@ html {
         text-decoration: none;
 
         h2 {
-            font-size: 18px;
+            font-size: 13px;
             color: var(--bg-color);
         }
     }
@@ -163,7 +176,7 @@ html {
     overflow-y: auto;
     /* position: fixed; */
     margin-left: -115px;
-    
+
 }
 
 .section-left.extend {
@@ -197,7 +210,7 @@ ul li {
     font-size: 15px;
     height: 45px;
     padding: 5px 10px;
-    background-color:var(--text-color);
+    background-color: var(--text-color);
     /* width: 40px; */
 
     a {
@@ -247,9 +260,7 @@ ul li:hover {
     background-color: var(--text-color);
 }
 
-.section-right.extend {
-    
-}
+.section-right.extend {}
 
 
 
@@ -266,6 +277,8 @@ ul li:hover {
     z-index: 10;
     transition: background-color 0.3s;
     /* margin-top: -48px; */
+    /* display: block; or display: inline-block; */
+
 }
 
 .scroll-button:hover {
@@ -274,34 +287,40 @@ ul li:hover {
 
 .scroll-left {
     position: absolute;
-    top: 65px;
-    left: 0;
+    top: 3px;
+    left: 20px;
     display: none;
     /* Initially hidden */
 }
 
 .scroll-right {
-    right: 0;
+    right: 10px;
+    top: 0;
+    background-color: var(--text-color);
+
 }
 
+/* 
 .keywords {
-    /* width: 1060px; */
-    white-space: nowrap;
-    flex-basis: 80%;
-    height: 40px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    white-space: nowrap;
     overflow: hidden;
-    /* Hide the scrollbar and overflow */
     scroll-behavior: smooth;
-    /* -ms-overflow-style: none;  IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-    position: fixed;
-    background-color: var(--keys_back);
-    margin: -20px;
+    background-color: #000000;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+} 
+*/
+.keywords {
+    display: flex;
+    white-space: nowrap;
+    height: 40px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    margin: -20px 0px;
     padding: 5px 20px;
+    width: 100%;
 }
 
 .keywords::-webkit-scrollbar {
@@ -312,9 +331,11 @@ ul li:hover {
     background-color: #dbcaca;
     color: #333;
 }
+
 .keyword:not(first-child) {
     /* background-color:#d8c5c500; */
     color: var(--bg-color);
+    background-color: var(--keys_back);
 }
 
 .keyword {
@@ -389,13 +410,14 @@ ul li:hover {
             .title {
                 width: 100%;
                 padding: 0;
-                 a {
+
+                a {
                     text-decoration: none;
-                    color: var(--bg-color);  
-                 }
+                    color: var(--bg-color);
+                }
             }
-            
-    /*         & .title {
+
+            /*         & .title {
                 width: 240px;
                 
                 white-space: nowrap;
@@ -571,7 +593,7 @@ ul li:hover {
     text-align: center;
 
     transition: background-color 0.3s ease;
-    opacity: 0; 
+    opacity: 0;
 }
 
 .scrollToTop.show {
@@ -599,6 +621,8 @@ ul li:hover {
             width: 100%;
         }
     }
+
+
 
 
 }
@@ -662,23 +686,32 @@ ul li:hover {
 
     }
 
+    .nav_left {
+
+        .nav_logo {
+            :where(h2) {
+                font-size: 13px;
+            }
+        }
+    }
+
 }
 
 
-/*------- darkMode ---------*/ 
+/*------- darkMode ---------*/
 
 
 body.darkMode {
-  /*   color: var(--bg-color);
+    /*   color: var(--bg-color);
      color: #000; 
 
     :where(.section-left, .section-right, .card, .title){
         color: var(--bg-color);
         color: #000;
     } */
-        --bg-color: #121212;
-        --text-color: #e0e0e0;
-        --link-color: #8ab4f8;
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --link-color: #8ab4f8;
 }
 
 /* .section-right.darkMode {
@@ -702,4 +735,3 @@ body.darkMode {
      color: #000;
     }
  } */
-
