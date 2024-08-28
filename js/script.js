@@ -14,6 +14,22 @@ let scrollToTop = document.querySelector('.scrollToTop');
 
 let section_right = document.querySelector(".section-right");
 
+let btnDark = document.querySelector(".night");
+
+
+btnDark.addEventListener("click", function () {
+
+
+  document.body.classList.toggle('darkMode');
+
+
+  //  document.body.classList.toggle('darkMode');
+
+
+
+  section_left.classList.toggle('darkMode');
+  section_right.classList.toggle('darkMode');
+});
 
 /* menu_hide.addEventListener('click', () => {
 
@@ -58,7 +74,7 @@ menu.addEventListener('click', () => {
   // }
   // } 
 
-  console.log('i am fine');
+
 
   // let menuActived = document.querySelector(".activeMenu");
 
@@ -96,10 +112,17 @@ function scrollMenu(distance) {
   });
 
   // Check if buttons should be shown or hidden after scrolling
-  setTimeout(checkButtonVisibility, 300); // Delay to wait for the scroll to finish
+  setTimeout(checkButtonVisibility, 150); // Delay to wait for the scroll to finish
 }
 
 function checkButtonVisibility() {
+
+
+/*   console.log("Scroll Width:", keywords.scrollWidth);
+  console.log("Client Width:", keywords.clientWidth);
+  console.log("Scroll Left:", keywords.scrollLeft); */
+
+
   // Show the left button if we have scrolled away from the start
   if (keywords.scrollLeft > 0) {
     scrollLeftButton.style.display = "block";
@@ -124,14 +147,14 @@ section_right.addEventListener("scroll", (e) => {
   if (section_right.scrollTop > 300) {
     // scrollToTop.classList.add('show');
     scrollToTop.style.opacity = "1";
-    console.log('dddddddd');
+
   } else {
 
     scrollToTop.style.opacity = "0";
     // scrollToTop.classList.remove('show');
   }
 
-    // console.log(e.target.scrollY);
+  // console.log(e.target.scrollY);
 });
 
 
@@ -141,7 +164,7 @@ scrollToTop.addEventListener('click', function () {
   section_right.scrollTo({
     top: 0,
     behavior: 'smooth'
-});
+  });
 });
 
 
