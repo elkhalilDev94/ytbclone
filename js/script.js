@@ -10,15 +10,13 @@ let sidebar = document.querySelector('.sidebar');
 
 let scrollToTop = document.querySelector('.scrollToTop');
 
-
-
 // let section_right = document.querySelector('.section-right');
 
 let section_right = document.querySelector(".section-right");
 
 let btnDark = document.querySelector(".night");
 
-
+/* 
 btnDark.addEventListener("click", function () {
 
 
@@ -32,24 +30,66 @@ btnDark.addEventListener("click", function () {
   // section_left.classList.toggle('darkMode');
   // section_right.classList.toggle('darkMode');
 });
+ */
 
-/* menu_hide.addEventListener('click', () => {
+/*-------------- Apply_Dark_Light_Mode -----------------*/
+
+
+// Function to apply the theme based on the current mode
+function applyTheme(mode) {
+  document.body.classList.remove('lightMode', 'darkMode');
+  document.body.classList.add(`${mode}`);
+}
+
+// Function to toggle between light and dark modes
+function toggleTheme() {
+  let currentMode = localStorage.getItem('theme') === 'darkMode' ? 'darkMode' : 'lightMode';
+  let newMode = currentMode === 'darkMode' ? 'lightMode' : 'darkMode';
+  
+  // Apply the new theme
+  applyTheme(newMode);
+  
+  // Store the new theme in local storage
+  localStorage.setItem('theme', newMode);
+}
+
+// Check for saved theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+  let savedTheme = localStorage.getItem('theme') || 'lightMode';
+  applyTheme(savedTheme);
+  
+  // Add event listener for theme toggle button
+ btnDark.addEventListener('click', toggleTheme);
+});
+
+
+/*------------ sideBar Menu --------------*/
+
+menu_hide.addEventListener('click', () => {
 
 
   // if (document.body.clientWidth <= 600) {
     // Code to execute if the body width is greater than 600px
     // console.log("Body width is greater than 600px");
     
-    sidebar.classList.toggle('active');
-    section_left.classList.toggle('active');
+    sidebar.classList.toggle('hide');
+  //   section_left.classList.toggle('active');
 
-    if (document.body.clientWidth >= 1000) {
-      section_right.style.flexBasis = "90%";
-      section_left.style.flexBasis = "10%";
-  }
+  //   if (document.body.clientWidth >= 1000) {
+  //     section_right.style.flexBasis = "90%";
+  //     section_left.style.flexBasis = "10%";
   // }
   
-}); */
+}); 
+
+
+/*------------ sideBar Menu ---------------*/
+
+
+
+/*-------------- Apply_Dark_Light_Mode ------------------*/
+
+
 
 
 
@@ -64,12 +104,13 @@ menu.addEventListener('click', () => {
   // section_right.style.display.zIndex = "-1";
 
   // if (document.body.clientWidth >= 1000) {
-  /* 
-          section_right.classList.toggle('extend');
-          section_right.classList.remove('extend'); */
-
-  section_right.classList.toggle('extend');
-  section_left.classList.toggle('extend');
+  
+          // sidebar.classList.toggle('extend');
+          sidebar.classList.add('show');
+          sidebar.classList.remove('hide');
+/* 
+   section_right.classList.toggle('extend');
+   section_left.classList.toggle('extend'); */
 
   /*   section_right.style.flexBasis = "80%";
     section_left.style.flexBasis = "20%"; */
@@ -177,7 +218,7 @@ scrollToTop.addEventListener('click', function () {
 
 // const scrollContainer = document.querySelector('.scroll-container');
 
-keywords.addEventListener('wheel', (event) => {
+ keywords.addEventListener('wheel', (event) => {
   event.preventDefault();
   keywords.scrollLeft += event.deltaY;
 });
@@ -212,7 +253,8 @@ keywords.addEventListener('mousemove', (e) => {
   const x = e.pageX - keywords.offsetLeft;
   const walk = (x - startX) * 2; // *2 for faster scroll
   keywords.scrollLeft = scrollLeft - walk;
-});
+}); 
 
 
 /*---------------------------------------*/
+
