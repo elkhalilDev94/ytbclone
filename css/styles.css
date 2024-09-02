@@ -671,6 +671,7 @@ ul li:hover {
         flex-shrink: 0;
         user-select: none;
         /* Prevent text selection during drag */
+         color: var(--text-color);
 
     }
 }
